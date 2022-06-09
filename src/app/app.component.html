@@ -1,0 +1,19 @@
+<div>
+  <input
+    type="checkbox"
+    *ngFor="let item of tabKey; let i = index"
+    (change)="ShowOrHideColumn($event, 'cl'+i)"
+  />
+</div>
+<table>
+  <thead>
+    <th *ngFor="let item of tabKey; let i = index" class="cl{{ i }}">
+      {{ item }}
+    </th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let arr of tabValue">
+      <td *ngFor="let item of arr; let i = index" class="cl{{ i }}">{{ item }}</td>
+    </tr>
+  </tbody>
+</table>
